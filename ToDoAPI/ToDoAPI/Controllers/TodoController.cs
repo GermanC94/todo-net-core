@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ToDoAPI
@@ -11,10 +8,57 @@ namespace ToDoAPI
     [ApiController]
     public class TodoController : ControllerBase
     {
+
+        /// <summary>
+        /// Endpoint that returns a todo list (api/Todo/GetTodoList)
+        /// </summary>
+        /// <returns>NotImplementedException()</returns>
         [HttpGet]
-        public IActionResult GetTodoList()
+        [Route("GetTodoList")]
+        public async Task<IActionResult> GetTodoList()
         {
-            return Ok();
+            await Task.Delay(100);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Endpoint that inserts a todo item (api/Todo/AddTodoItem)
+        /// </summary>
+        /// <returns>NotImplementedException()</returns>
+        [HttpPost]
+        [Route("AddTodoItem")]
+        public async Task<IActionResult> AddTodoItem([FromBody] string todo)
+        {
+            await Task.Delay(100);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Endpoint that updates a todo item (api/Todo/UpdateTodoItem/{itemId})
+        /// </summary>
+        /// <returns>NotImplementedException()</returns>
+        [HttpPut]
+        [Route("UpdateTodoItem/{itemId}")]
+        public async Task<IActionResult> UpdateTodoItem(int itemId, [FromBody] string newItemName)
+        {
+            await Task.Delay(100);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Endpoint that deletes a todo item (api/Todo/DeleteTodoItem/{itemId})
+        /// </summary>
+        /// <returns>NotImplementedException()</returns>
+        [HttpDelete]
+        [Route("DeleteTodoItem/{itemId}")]
+        public async Task<IActionResult> DeleteTodoItem(int itemId)
+        {
+            await Task.Delay(100);
+
+            throw new NotImplementedException();
         }
     }
 }
